@@ -18,7 +18,7 @@ function saveIssue(e) {
   if (localStorage.getItem('issues') == null) {
     var issues = [];
     issues.push(issue);
-    localStorage.setItem('issues', JSON.stringify(issues));                                                       //pushes the issue object above with all parameters (desc, severity, assignedTo, id, status)
+    localStorage.setItem('issues', JSON.stringify(issues));                                               //pushes the issue object above with all parameters (desc, severity, assignedTo, id, status)
   }
   else {
     var issues = JSON.parse(localStorage.getItem('issues'));
@@ -34,6 +34,10 @@ function saveIssue(e) {
   e.preventDefault();
 }
 
+document.getElementById('upload').addEventListener('click', openDialog);
+	function openDialog() {
+document.getElementById('fileid').click();
+}
 function setStatusClosed(id) {
   var issues = JSON.parse(localStorage.getItem('issues'));
 
